@@ -7628,10 +7628,6 @@ body .input-checkbox .checkmark:after {
     body .notifications .notif p .close-notif {
         opacity: 1;
     }
-    body section.edit-profile form .form-group .salary {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    }
     body section.edit-profile form .form-group .salary>* {
         margin-bottom: 1rem;
     }
@@ -7676,12 +7672,19 @@ body .input-checkbox .checkmark:after {
     .experience-block {
         font-size: var(--sm-text);
     }
+    section.edit-profile form .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     section.edit-profile form .form-group>*:first-child {
-        width: 30% !important;
+        width: 100% !important;
         font-size: 1.25rem;
     }
+    body .half {
+        width: 100%;
+    }
     section.edit-profile form .form-group>*:last-child {
-        width: 65% !important;
+        width: 100% !important;
         font-size: 1.25rem;
     }
     section.edit-profile form .form-group>* label {
@@ -7691,7 +7694,7 @@ body .input-checkbox .checkmark:after {
         width: 50%;
     }
     section.edit-profile form .form-group .select-wrapper::before {
-        padding: 0 0.5rem;
+        padding: 0 1rem;
     }
     .add-skills-wrapper {
         flex-direction: column;
