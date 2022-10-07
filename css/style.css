@@ -1700,7 +1700,7 @@ body .blackout-f {
 }
 
 .add-skills-wrapper .select-input {
-    background-color: #fff;
+    background-color: #fff !important;
     position: relative;
     z-index: 20;
 }
@@ -2117,11 +2117,16 @@ body .notifications .notif p {
 body .form-group .add-skills-wrapper .select-wrapper:before {
     content: "\e906" !important;
     font-size: 2rem;
-    /* width: 3.5rem; */
-    height: 100%;
+    flex-shrink: 0;
+    top: 0;
+    height: auto;
+    border-top-right-radius: var(--rad);
+    border-bottom-right-radius: var(--rad);
+    position: absolute;
     background-color: var(--border);
-    z-index: -1;
-    border-left: 1px solid var(--grey-text);
+    z-index: 99;
+    border: 1px solid var(--grey-text);
+    bottom: 0;
 }
 
 body .notifications .notif p .close-notif {
