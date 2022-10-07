@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/Logo.svg">
+    <meta name="theme-color" content="#ffffff">
+    <title>Учет.Работа</title>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="city-wrapper">
+                <div class="city-btn">
+                    <picture>
+                        <source srcset="./img/flag.svg" type="image/webp"><img src="./img/flag.svg" alt="">
+                    </picture>
+                    <div class="current">Все города</div>
+                </div>
+                <ul class="city-dropdown">
+                    <li>Все города</li>
+                    <li>Нур-Султан</li>
+                    <li>Алматы</li>
+                    <li>Актобе</li>
+                    <li>Караганда</li>
+                    <li>Павлодар</li>
+                    <li>Шымкент</li>
+                    <li>Актау</li>
+                    <li>Атырау</li>
+                    <li>Усть-Каменогорск</li>
+            </div>
+        </div>
+        </div>
+        <div class="header-content dark-bg  white">
+            <div class="site-branding">
+                <a href="/">
+                    <picture>
+                        <source srcset="./img/uchet-logo.svg" type="image/webp"><img src="./img/uchet-logo.svg" alt="">
+                    </picture>
+                </a>
+            </div>
+            <a href="login.html" class="btn bordered unauthorized-block hide-sm">Войти</a>
+            <div class="authorized-block">
+                <div class="right-btns hide-sm">
+                    <a href="search-vacancy.html" class="text">Поиск вакансий</a>
+                    <a href="add-resume.html" class="btn bordered">Создать резюме</a>
+                    <div class="user-info ">
+
+                        <div class="icon-user-border user-avatar"></div>
+                        <ul class="user-dropdown">
+                            <li>Фамилия Имя</li>
+                            <li><a href="dashboard.html">Настройки</a></li>
+                            <li><a href="my-resume.html">Мои резюме</a></li>
+                            <li><a href="fav-vacancy.html">Избранные вакансии</a></li>
+                            <li><a href="response.html">Отклики</a></li>
+                            <li><a href="#" class=" logout-btn">Выйти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="authorized-employer-block">
+                <div class="right-btns hide-sm">
+                    <a href="vacancy-response.html" class="text rel">Отклики на вакансии <span
+                            class="response-count">2</span></a>
+                    <a href="search-resume.html" class="text">Поиск резюме</a>
+                    <a href="employer-vacancy.html" class="btn bordered">Создать вакансию</a>
+                    <div class="user-info">
+                        <div class="icon-user-border user-avatar"></div>
+                        <ul class="user-dropdown">
+                            <li>ID: 100666</li>
+                            <li><a href="edit-employer.html">Настройки профиля</a></li>
+                            <li><a href="edit-company.html">Описание компании</a></li>
+                            <li><a href="my-vacancy.html">Вакансии от работодателя</a></li>
+                            <li><a href="fav-resume.html">Избранные резюме</a></li>
+                            <li><a href="#" class=" logout-btn">Выйти</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <a href="login.html" class="hide-md hide-lg icon-user-border login-btn"></a>
+        </div>
+    </header>
+    <section class="tabs edit-profile p">
+        <div class="container">
+            <div class="section-title">
+                <h3>Личный кабинет</h3>
+            </div>
+            <div class="dashboard-menu mb3"> <a href="dashboard.html" class="menu-item">Настройки</a> <a href="my-resume.html" class="menu-item">Мои резюме</a> <a href="fav-vacancy.html" class="menu-item">Избранные вакансии</a> <a href="response.html" class="menu-item active">Отклики</a>                </div>
+            <div class="container">
+                <div class="card-items">
+                    <div class="card-item">
+                        <div class="card-content article-md">
+                            <div class="card-item__name"> <a href="single-vacancy.html" class="title">Главный
+                                    бухгалтер</a>
+                                <div class="salary">от 300 000 KZT на руки</div>
+                            </div>
+                            <div class="card-item__middle">
+                                <a href="#" class="card-logo">
+                                    <picture>
+                                        <source srcset="./img/vacancy-logo.webp" type="image/webp"><img src="./img/vacancy-logo.png" alt="">
+                                    </picture>
+                                </a>
+                                <div class="card-info"> <a href="#" class="title">TOO Boss media group</a> <span class="address">Жарокова 41, Алматы</span> </div>
+                            </div>
+                        </div>
+                        <div class="card-item__bottom">
+                            <div class="date">В архиве</div>
+                            <div class="bottom-btns"> <button class="btn icon icon-delete delete-card" data-prompt="Удалить резюме"></button> <button class="btn icon icon-share"></button>
+                                <button class="btn fav-add-btn icon icon-heart active"></button> </div>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="card-content article-md">
+                            <div class="card-item__name"> <a href="single-vacancy.html" class="title">Главный
+                                    бухгалтер</a>
+                                <div class="salary">от 300 000 KZT на руки</div>
+                            </div>
+                            <div class="card-item__middle">
+                                <a href="#" class="card-logo"> </a>
+                                <div class="card-info"> <a href="#" class="title">TOO Boss media group</a> <span class="address">Жарокова 41, Алматы</span> </div>
+                            </div>
+                        </div>
+                        <div class="card-item__bottom">
+                            <div class="date">Опубликовано: <b>31.08.2022</b></div>
+                            <div class="bottom-btns"> <button class="btn icon icon-delete delete-card" data-prompt="Удалить резюме"></button> <button class="btn icon icon-share"></button>
+                                <button class="btn fav-add-btn icon icon-heart"></button> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="no-vacancy-card article">
+                    <picture>
+                        <source srcset="./img/no-resume.svg" type="image/webp"><img src="./img/no-resume.svg" alt="">
+                    </picture>
+                    <div class="grey-text  mt2 mw-70 mxa lg-text"> <span class="fw-700">Вы ещё не откликались на
+                            вакансии </span>
+                        <p>Если понравилась вакансия, Вы можете откликнуться, чтобы привлечь внимание работодателя.</p>
+                    </div> <a href="search-vacancy.html" class="btn mt3 mxa">Поиск вакансии</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="notif response-notif success">
+        <div class="notif-content icon-check"> Ваш отклик отправлен работодателю </div>
+        <div class="icon-close close-notif"></div>
+    </div>
+    <div class="popup order-popup">
+        <div class="blackout"></div>
+        <form class="popup-content ">
+            <div class="icon-close close-popup"></div>
+            <div class="article">
+                <div class="form-group">
+                    <h6 class="tac">Резюме для отклика</h6>
+                    <div class="input-toggler article-sm tal"> <label for="resume_1"> <input type="radio" name="resume"
+                                id="resume_1"><span>Бухгалтер</span></label> <label for="resume_2"><input type="radio"
+                                name="resume" id="resume_2"><span>Главный бухгалтер</span></label> </div>
+                </div>
+                <div class="btns jcc">
+                    <div class="line jcc"> <button class="btn response-btn">Откликнуться</button> <button class="btn theme-bordered">Отмена</button> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="popup delete-resume-popup">
+        <div class="blackout"></div>
+        <form class="popup-content ">
+            <div class="icon-close close-popup"></div>
+            <div class="article">
+                <div class="form-group">
+                    <h6 class="tac">Удаление резюме</h6>
+                    <div>Вы действительно хотите удалить резюме?</div>
+                </div>
+                <div class="btns jcc">
+                    <div class="line jcc"> <button class="btn response-btn">Удалить</button> <button class="btn theme-bordered">Отменить</button> </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer class="site-footer white mta">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column article-lg">
+                    <ul>
+                        <h6 class="title">Сервисы для Бухгалтера</h6>
+                        <li><a href="#">Облачная бухгалтерия</a></li>
+                        <li><a href="#">Онлайн касса</a></li>
+                        <li><a href="#">Электронный документооборот</a></li>
+                        <li><a href="#">ПОБ</a></li>
+                    </ul>
+                    <ul>
+                        <h6 class="title">Обучение </h6>
+                        <li><a href="#">Все курсы</a></li>
+                        <li><a href="#">ПРОФ Бухгалтер</a></li>
+                        <li><a href="#">Налоговый консультант</a></li>
+                        <li><a href="#">Главный бухгалтер</a></li>
+                        <li><a href="#">ДипИФР-рус АССА</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column article-lg">
+                    <ul>
+                        <h6 class="title">Сервисы для бизнеса</h6>
+                        <li><a href="#">Проверка контрагента</a></li>
+                        <li><a href="#">Бухгалтерия на аутсорс</a></li>
+                        <li><a href="#">Франшиза</a></li>
+                        <li><a href="#">Аудит</a></li>
+                        <li><a href="#">ПОБ</a></li>
+                    </ul>
+                    <ul>
+                        <h6 class="title">Справочники</h6>
+                        <li><a href="#">Курсы валют</a></li>
+                        <li><a href="#">Календари</a></li>
+                        <li><a href="#">Ставки</a></li>
+                        <li><a href="#">Рабочее время</a></li>
+                        <li><a href="#">Кодексы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column article-lg">
+                    <ul>
+                        <h6 class="title">По всем вопросам</h6>
+                        <li><a href="#" class="icon-phone">+7 727 350-74-74</a></li>
+                        <li><a href="#" class="icon-wa">+7 727 350-74-74</a></li>
+                        <li><a href="#" class="icon-mail">info@uchet.kz</a></li>
+                    </ul>
+                    <ul class="social-network">
+                        <h6 class="title">Учёт в социальных сетях</h6>
+                        <li>
+                            <a href="#" class="icon-vk"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon-facebook"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon-youtube"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon-instagram"></a>
+                        </li>
+                        <li>
+                            <a href="#" class="icon-telegram"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright"> 2006 – 2022 © Учёт™ </div>
+        </div>
+    </footer>
+    <script src="js/imask.js"></script>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
