@@ -332,7 +332,7 @@ if (inputs.length) {
 
 
 
-let type = localStorage.getItem('type')
+var type = localStorage.getItem('type')
 document.querySelector('body').classList.add(type);
 
 function applicantLogin(e) {
