@@ -566,4 +566,4 @@ function addSkills(arr) {
         }
     }
 }
-addSkills(skill_2);
+addSkills(skill_1);
