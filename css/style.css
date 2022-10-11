@@ -1,4 +1,34 @@
 @charset "UTF-8";
+
+/* классы */
+
+.authorized-block,
+.authorized-employer-block {
+    display: none !important;
+}
+
+
+/* Авторизован как соискатель  */
+
+body.authorized .authorized-block {
+    display: block !important;
+}
+
+body.authorized .unauthorized-block {
+    display: none !important;
+}
+
+
+/* Авторизован как  работодатель  */
+
+body.authorized-employer .authorized-employer-block {
+    display: block !important;
+}
+
+body.authorized-employer .unauthorized-block {
+    display: none !important;
+}
+
 :root {
     --theme: #E31724;
     --dark: #b5121d;
@@ -596,6 +626,10 @@ body .loaded .animation-preloader {
     -webkit-transition: 0.3s ease-out;
     -o-transition: 0.3s ease-out;
     transition: 0.3s ease-out;
+}
+
+li.disabled {
+    pointer-events: none;
 }
 
 body .loaded .loader-section.section-left {
@@ -5814,6 +5848,58 @@ ul.styled li:before {
     padding-top: 2rem;
 }
 
+.card-item__bottom .social-widget {
+    position: absolute;
+    display: none;
+    bottom: -6rem;
+    background-color: var(--bg);
+    right: 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: var(--shadow-s);
+    box-shadow: var(--shadow-s);
+    border-radius: var(--rad);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    z-index: 20;
+    align-items: center;
+}
+
+.card-item__bottom .social-widget>* {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--blue);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.card-item__bottom .social-widget>*:not(:first-child) {
+    margin-left: 1rem;
+}
+
+.card-item__bottom .social-widget>*.icon-wa {
+    background-color: #65BC54;
+}
+
+.card-item__bottom.social-widget>*.icon-vk {
+    background-color: #4C75A3;
+}
+
+.card-item__bottom .social-widget>*.icon-telegram {
+    color: #61A8DE;
+}
+
+.card-item__bottom .social-widget.show {
+    display: flex;
+}
+
 .card-item__bottom>*:first-child {
     line-height: 1;
     font-size: 1.2rem;
@@ -5824,6 +5910,7 @@ ul.styled li:before {
 .card-item__bottom .bottom-btns {
     display: -webkit-box;
     display: -ms-flexbox;
+    margin-left: auto;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -6425,6 +6512,7 @@ section.tabs .tab-content p {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    z-index: 2;
 }
 
 .popup.show {
@@ -6476,18 +6564,18 @@ section.tabs .tab-content p {
     padding-left: 3rem;
 }
 
-.popup .popup-content .close-popup {
+.popup .popup-content .icon-close.close-popup {
     position: absolute;
     top: 2rem;
     right: 2rem;
     cursor: pointer;
 }
 
-.popup .popup-content .close-popup::before {
+.popup .popup-content .icon-close.close-popup::before {
     color: var(--grey-text);
 }
 
-.popup .popup-content .close-popup:hover::before {
+.popup .popup-content .icon-close.close-popup:hover::before {
     color: var(--red);
 }
 
@@ -6799,27 +6887,6 @@ header.site-header .header-content .login-btn:hover {
 
 .city-wrapper .city-dropdown.active {
     display: block;
-}
-
-.authorized-block,
-.authorized-employer-block {
-    display: none !important;
-}
-
-body.authorized .authorized-block {
-    display: block !important;
-}
-
-body.authorized .unauthorized-block {
-    display: none !important;
-}
-
-body.authorized-employer .authorized-employer-block {
-    display: block !important;
-}
-
-body.authorized-employer .unauthorized-block {
-    display: none !important;
 }
 
 footer.site-footer {
@@ -7325,6 +7392,18 @@ ul.column li span {
     font-size: 1.25rem;
 }
 
+form.search-form {
+    position: relative;
+}
+
+form.search-form svg {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    height: 2rem;
+}
+
 .experience-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7332,7 +7411,7 @@ ul.column li span {
     font-size: 1.5rem;
 }
 
-.experience-block .job-date {
+.experience-block .block-title {
     width: 20%;
     -ms-flex-negative: 0;
     flex-shrink: 0;
@@ -7702,6 +7781,9 @@ body .input-checkbox .checkmark:after {
     }
     .add-skills-wrapper>* {
         width: 100% !important;
+    }
+    .first-slide {
+        padding-top: var(--padding);
     }
 }
 
