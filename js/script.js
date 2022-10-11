@@ -1,6 +1,4 @@
-let tablinks = document.querySelectorAll(".tab-link"),
-    prevBtn = document.querySelector(".prev-btn"),
-    nextBtn = document.querySelector(".next-btn");
+let tablinks = document.querySelectorAll(".tab-link");
 if (tablinks.length) {
 
     for (let tablink of tablinks) {
@@ -9,8 +7,8 @@ if (tablinks.length) {
             tabcontents = parent.querySelectorAll('.tab-content');
 
         tablink.addEventListener('click', function(e) {
-            tablink_s = parent.querySelectorAll(".tab-link");
-            tablink_s.forEach(function(el) {
+
+            tablinks.forEach(function(el) {
                 el.classList.remove("active");
             });
             tabcontents.forEach(function(el) {
@@ -20,27 +18,7 @@ if (tablinks.length) {
             document.querySelector("#" + tab_id).classList.add("active");
         });
 
-
-        if (prevBtn) {
-
-            prevContent = document.querySelector("#" + tab_id).previousElementSibling;
-            prevBtn.classList.remove('dn');
-            prevBtn.addEventListener('click', function() {
-
-                if (document.querySelector("#" + tab_id).classList.contains('active')) {
-                    let prevContent = document.querySelector("#" + tab_id).previousElementSibling;
-
-                    document.querySelector("#" + tab_id).classList.remove('active')
-                    prevContent.classList.add('active');
-                    tablink.classList.remove('active');
-                    tablink.previousElementSibling.classList.add('active');
-                }
-            });
-        }
-
     }
-
-
 
 }
 
@@ -67,104 +45,76 @@ if (selectDay) {
 }
 
 
+let country = ['Абхазия', 'Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Аргентина', 'Армения', 'Афганистан', 'Багамские Острова', 'Бангладеш', 'Барбадос', 'Бахрейн', 'Беларусь', 'Белиз', 'Бельгия', 'Болгария', 'Боливия', 'Босния и Герцеговина', 'Бразилия', 'Бруней Даруссалам', 'Буркина Фасо', 'Великобритания', 'Венгрия', 'Венесуэла', 'Вьетнам', 'Габон', 'Гвинея', 'Германия', 'Государство Палестина', 'Греция', 'Грузия', 'Дания', 'Демократическая Республика Конго', 'Джибути', 'Доминиканская Республика', 'Египет', 'Замбия', 'Израиль', 'Индия', 'Индонезия', 'Иордания', 'Ирак', 'Иран', 'Ирландия', 'Исландия', 'Испания', 'Италия', 'Йемен', 'Казахстан', 'Камбоджа', 'Канада', 'Катар', 'Кипр', 'Китай', 'Колумбия', 'Кооперативная Республика Гайана', 'Королевство Саудовская Аравия', 'Кувейт', 'Кыргызстан', 'Лаос', 'Латвия', 'Ливан', 'Ливия', 'Литва', 'Лихтенштейн', 'Люксембург', 'Македония', 'Малайзия', 'Мали', 'Мальдивская Республика', 'Мальта', 'Марокко', 'Мексика', 'Молдавия', 'Монако', 'Монголия', 'Мьянма', 'Намибия', 'Непал', 'Нигерия', 'Нидерланды', 'Новая Зеландия', 'Норвегия', 'ОАЭ', 'Объединенная Республика Танзания', 'Оман', 'Острова Кайман', 'Пакистан', 'Панама', 'Парагвай', 'Перу', 'Польша', 'Португалия', 'Республика Бенин', 'Республика Гаити', 'Республика Гана', 'Республика Гватемала', 'Республика Зимбабве', 'Республика Камерун', 'Республика Кения', 'Республика Конго', 'Республика Коста-Рика', 'Республика Кот-д’Ивуар', 'Республика Куба', 'Республика Либерия', 'Республика Маврикий', 'Республика Мадагаскар', 'Республика Малави', 'Республика Нигер', 'Республика Никарагуа', 'Республика Северный Судан', 'Республика Сейшельские острова', 'Республика Сенегал', 'Республика Сьерра-Леоне', 'Республика Чад', 'Республика Эль-Сальвадор', 'Реюньон', 'Россия', 'Румыния', 'Сент-Винсент и Гренадины', 'Сербия', 'Сингапур', 'Сирия', 'Словакия', 'Словения', 'США', 'Таджикистан', 'Таиланд', 'Тайвань', 'Тоголезская Республика', 'Тунис', 'Туркменистан', 'Турция', 'Уганда', 'Узбекистан', 'Украина', 'Уругвай', 'Филиппины', 'Финляндия', 'Франция', 'Хорватия', 'Центральноафриканская Республика', 'Черногория', 'Чехия', 'Чили', 'Швейцария', 'Швеция', 'Шотландия', 'Шри-Ланка', 'Эквадор', 'Эритрея', 'Эстония', 'Эфиопия', 'ЮАР', 'Южная Корея', 'Южная Осетия', 'Ямайка', 'Япония'];
+let city = ['Абай', 'Агадырь', 'Айтеке-Би', 'Аккистау', 'Акколь', 'Акку', 'Акмол', 'Аксай', 'Аксу', 'Аксу-Аюлы', 'Аксукент', 'Актау', 'Актобе', 'Актогай', 'Алга', 'Алматы', 'Алтай (Зыряновск)', 'Амангельды', 'Арал', 'Аркалык', 'Аршалы', 'Арыс', 'Аса', 'Астраханка', 'Атасу', 'Атбасар', 'Атырау', 'Аулиеколь', 'Аягоз', 'Бадамша', 'Байконыр', 'Баканас', 'Балкашино', 'Балпык-Би', 'Балхаш', 'Баянаул', 'Бейнеу', 'Бескарагай', 'Бишкуль', 'Большенарымское', 'Боровской', 'Бородулиха', 'Ботакара', 'Булаево', 'Вахтовый поселок Тенгиз', 'Ганюшкино', 'Глубокое', 'Денисовка', 'Державинск', 'Егиндыколь', 'Ерейментау', 'Есик', 'Есиль', 'Жаксы', 'Жалагаш', 'Жанакорган', 'Жанаозен', 'Жанатас', 'Жангала', 'Жанибек', 'Жансугуров', 'Жаркент', 'Жаркент (Жамбыльская обл)', 'Жезказган', 'Железинка', 'Жем', 'Жетысай', 'Житикара', 'Жосалы', 'Жымпиты', 'Зайсан', 'Затобольск', 'Зеренда', 'Индерборский', 'Иргиз', 'Иртышск', 'Казалинск', 'Казталовка', 'Казыгурт', 'Калбатау', 'Камысты', 'Кандыагаш', 'Капшагай', 'Карабалык', 'Карабулак', 'Караганда', 'Каражал', 'Караменды', 'Карасу', 'Каратау', 'Каратобе', 'Караул', 'Карауылкелды', 'Каркаралинск', 'Каскелен', 'КасымаКайсенова', 'Качиры', 'Кеген', 'Кентау', 'Киевка', 'Кишкенеколь', 'Кобда', 'Кокпекты', 'Коктобе', 'Кокшетау', 'Коргалжын', 'Кордай', 'Костанай', 'Кулан', 'Кульсары', 'Курчатов', 'Курчум', 'Курык', 'Кызыл-Сай', 'Кызылорда', 'Ленгер', 'Лисаковск', 'Макат', 'Макинск', 'Мамлютка', 'Мангистау', 'Мартук', 'Махамбет', 'Мерке', 'Миялы', 'Мойынкум', 'Момышулы', 'Новоишимское', 'Астана', 'Осакаровка', 'Отеген-Батыр', 'Павлодар', 'Переметное', 'Петропавловск', 'Пресновка', 'Приозёрск', 'Риддер', 'Рудный', 'Сайхин', 'Сарань', 'Сарканд', 'Сарыагаш', 'Сарыкемер', 'Сарыколь', 'Сарыозек', 'Сатпаев', 'Саумалколь', 'Семей', 'Сергеевка', 'Серебрянск', 'Смирново', 'Степногорск', 'Степняк', 'Тайынша', 'Талгар', 'Талдыкорган', 'Талшик', 'Тараз', 'Тарановское', 'Таскала', 'Текели', 'Темир', 'Темирлановка', 'Темиртау', 'Теректы', 'Теренозек', 'Тимирязево', 'ТурараРыскулова', 'Тургай', 'Туркестан', 'Узунколь', 'Узынагаш', 'Уил', 'Улытау', 'Уральск', 'Урджар', 'Успенка', 'Усть-Каменогорск', 'Ушарал', 'Уштобе', 'Федоровка', 'Федоровка(Коснатайскаяобл', ')', 'Форт-Шевченко', 'Хромтау', 'Чапаев', 'Чингирлау', 'Чунджа', 'Шалкар', 'Шар', 'Шардара', 'Шаульдер', 'Шахтинск', 'Шемонаиха', 'Шетпе', 'Шиели', 'Шолаккорган', 'Шортанды', 'Шу', 'Шубаркудук', 'Шымкент', 'Щербакты', 'Щучинск', 'Экибастуз', 'Эмба', 'Явленка'];
 
 
-let city = ['Абай', 'Агадырь', 'Айтеке-Би', 'Аккистау', 'Акколь', 'Акку', 'Акмол', 'Аксай', 'Аксу', 'Аксу-Аюлы', 'Аксукент', 'Актау', 'Актобе', 'Актогай', 'Алга', 'Алматы', 'Алтай (Зыряновск)', 'Амангельды', 'Арал', 'Аркалык', 'Аршалы', 'Арыс', 'Аса', 'Астраханка', 'Атасу', 'Атбасар', 'Атырау', 'Аулиеколь', 'Аягоз', 'Бадамша', 'Байконыр', 'Баканас', 'Балкашино', 'Балпык-Би', 'Балхаш', 'Баянаул', 'Бейнеу', 'Бескарагай', 'Бишкуль', 'Большенарымское', 'Боровской', 'Бородулиха', 'Ботакара', 'Булаево', 'Вахтовый поселок Тенгиз', 'Ганюшкино', 'Глубокое', 'Денисовка', 'Державинск', 'Егиндыколь', 'Ерейментау', 'Есик', 'Есиль', 'Жаксы', 'Жалагаш', 'Жанакорган', 'Жанаозен', 'Жанатас', 'Жангала', 'Жанибек', 'Жансугуров', 'Жаркент', 'Жаркент (Жамбыльская обл)', 'Жезказган', 'Железинка', 'Жем', 'Жетысай', 'Житикара', 'Жосалы', 'Жымпиты', 'Зайсан', 'Затобольск', 'Зеренда', 'Индерборский', 'Иргиз', 'Иртышск', 'Казалинск', 'Казталовка', 'Казыгурт', 'Калбатау', 'Камысты', 'Кандыагаш', 'Капшагай', 'Карабалык', 'Карабулак', 'Караганда', 'Каражал', 'Караменды', 'Карасу', 'Каратау', 'Каратобе', 'Караул', 'Карауылкелды', 'Каркаралинск', 'Каскелен', 'КасымаКайсенова', 'Качиры', 'Кеген', 'Кентау', 'Киевка', 'Кишкенеколь', 'Кобда', 'Кокпекты', 'Коктобе', 'Кокшетау', 'Коргалжын', 'Кордай', 'Костанай', 'Кулан', 'Кульсары', 'Курчатов', 'Курчум', 'Курык', 'Кызыл-Сай', 'Кызылорда', 'Ленгер', 'Лисаковск', 'Макат', 'Макинск', 'Мамлютка', 'Мангистау', 'Мартук', 'Махамбет', 'Мерке', 'Миялы', 'Мойынкум', 'Момышулы', 'Новоишимское', 'Нур-Султан(Астана)', 'Осакаровка', 'Отеген-Батыр', 'Павлодар', 'Переметное', 'Петропавловск', 'Пресновка', 'Приозёрск', 'Риддер', 'Рудный', 'Сайхин', 'Сарань', 'Сарканд', 'Сарыагаш', 'Сарыкемер', 'Сарыколь', 'Сарыозек', 'Сатпаев', 'Саумалколь', 'Семей', 'Сергеевка', 'Серебрянск', 'Смирново', 'Степногорск', 'Степняк', 'Тайынша', 'Талгар', 'Талдыкорган', 'Талшик', 'Тараз', 'Тарановское', 'Таскала', 'Текели', 'Темир', 'Темирлановка', 'Темиртау', 'Теректы', 'Теренозек', 'Тимирязево', 'ТурараРыскулова', 'Тургай', 'Туркестан', 'Узунколь', 'Узынагаш', 'Уил', 'Улытау', 'Уральск', 'Урджар', 'Успенка', 'Усть-Каменогорск', 'Ушарал', 'Уштобе', 'Федоровка', 'Федоровка(Коснатайскаяобл', ')', 'Форт-Шевченко', 'Хромтау', 'Чапаев', 'Чингирлау', 'Чунджа', 'Шалкар', 'Шар', 'Шардара', 'Шаульдер', 'Шахтинск', 'Шемонаиха', 'Шетпе', 'Шиели', 'Шолаккорган', 'Шортанды', 'Шу', 'Шубаркудук', 'Шымкент', 'Щербакты', 'Щучинск', 'Экибастуз', 'Эмба', 'Явленка'];
+function searchInput(place, dropdown) {
 
-cityItems = document.querySelectorAll('.city');
+    placeItems = document.getElementsByClassName(dropdown);
 
-if (cityItems) {
-    for (let cityItem of cityItems) {
-        for (let i = 0; i < city.length; i++) {
-            let x = "<li>" + city[i] + "</li>";
-            cityItem.innerHTML += x;
-        }
-    }
-
-}
-
-
-
-
-countryItems = document.querySelectorAll('.country');
-
-if (countryItems) {
-    for (let countryItem of countryItems) {
+    for (let placeItem of placeItems) {
+        let formElement = placeItem.closest('.select-wrapper') || [];
+        let inputElement = placeItem.previousElementSibling || [];
 
         window.addEventListener("load", init);
 
-        const country = ['Абхазия', 'Австралия', 'Австрия', 'Азербайджан', 'Албания', 'Алжир', 'Ангола', 'Андорра', 'Аргентина', 'Армения', 'Афганистан', 'Багамские Острова', 'Бангладеш', 'Барбадос', 'Бахрейн', 'Беларусь', 'Белиз', 'Бельгия', 'Болгария', 'Боливия', 'Босния и Герцеговина', 'Бразилия', 'Бруней Даруссалам', 'Буркина Фасо', 'Великобритания', 'Венгрия', 'Венесуэла', 'Вьетнам', 'Габон', 'Гвинея', 'Германия', 'Государство Палестина', 'Греция', 'Грузия', 'Дания', 'Демократическая Республика Конго', 'Джибути', 'Доминиканская Республика', 'Египет', 'Замбия', 'Израиль', 'Индия', 'Индонезия', 'Иордания', 'Ирак', 'Иран', 'Ирландия', 'Исландия', 'Испания', 'Италия', 'Йемен', 'Казахстан', 'Камбоджа', 'Канада', 'Катар', 'Кипр', 'Китай', 'Колумбия', 'Кооперативная Республика Гайана', 'Королевство Саудовская Аравия', 'Кувейт', 'Кыргызстан', 'Лаос', 'Латвия', 'Ливан', 'Ливия', 'Литва', 'Лихтенштейн', 'Люксембург', 'Македония', 'Малайзия', 'Мали', 'Мальдивская Республика', 'Мальта', 'Марокко', 'Мексика', 'Молдавия', 'Монако', 'Монголия', 'Мьянма', 'Намибия', 'Непал', 'Нигерия', 'Нидерланды', 'Новая Зеландия', 'Норвегия', 'ОАЭ', 'Объединенная Республика Танзания', 'Оман', 'Острова Кайман', 'Пакистан', 'Панама', 'Парагвай', 'Перу', 'Польша', 'Португалия', 'Республика Бенин', 'Республика Гаити', 'Республика Гана', 'Республика Гватемала', 'Республика Зимбабве', 'Республика Камерун', 'Республика Кения', 'Республика Конго', 'Республика Коста-Рика', 'Республика Кот-д’Ивуар', 'Республика Куба', 'Республика Либерия', 'Республика Маврикий', 'Республика Мадагаскар', 'Республика Малави', 'Республика Нигер', 'Республика Никарагуа', 'Республика Северный Судан', 'Республика Сейшельские острова', 'Республика Сенегал', 'Республика Сьерра-Леоне', 'Республика Чад', 'Республика Эль-Сальвадор', 'Реюньон', 'Россия', 'Румыния', 'Сент-Винсент и Гренадины', 'Сербия', 'Сингапур', 'Сирия', 'Словакия', 'Словения', 'США', 'Таджикистан', 'Таиланд', 'Тайвань', 'Тоголезская Республика', 'Тунис', 'Туркменистан', 'Турция', 'Уганда', 'Узбекистан', 'Украина', 'Уругвай', 'Филиппины', 'Финляндия', 'Франция', 'Хорватия', 'Центральноафриканская Республика', 'Черногория', 'Чехия', 'Чили', 'Швейцария', 'Швеция', 'Шотландия', 'Шри-Ланка', 'Эквадор', 'Эритрея', 'Эстония', 'Эфиопия', 'ЮАР', 'Южная Корея', 'Южная Осетия', 'Ямайка', 'Япония'];
-
-
         function init() {
             bindEvents();
-
         }
 
         function bindEvents() {
-            const formElement = document.querySelector(".select-wrapper") || {};
-            const inputElement = document.querySelector('.search-input') || {};
-            countryItem.classList.remove('show')
 
-            formElement.addEventListener("keypress", preventSubmitEvent);
             inputElement.addEventListener(
                 "keyup",
-                searchUser.bind(event, inputElement),
+                searchElem.bind(event, inputElement),
+                placeItem.classList.remove('show')
             );
-
         }
 
-        function preventSubmitEvent(event = {}) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                return false;
+        function searchElem(inputElement) {
+            let searchedTerm = inputElement.value && inputElement.value.toLowerCase();
+
+            let listElements = place.filter((title) => {
+                let listTitle = title || "";
+                return listTitle.toLowerCase().indexOf(searchedTerm) > -1;
+            });
+
+            addElemDropdown(listElements);
+        }
+
+
+        function addElemDropdown(listElements = []) {
+            placeItem.innerHTML = '';
+
+            listElements.forEach((title) => {
+                let x = `<li>${title}</li>`;
+                placeItem.innerHTML += x;
+            });
+
+
+            if (listElements.length === 0) {
+                placeItem.innerHTML = `<li class="grey-text disabled">Ничего не найдено</li>`;
             }
-        }
 
-
-        function searchUser(inputElement = {}, event) {
-            const searchedTerm = inputElement.value && inputElement.value.toLowerCase();
-
-            const listUsers = country.filter((data) => {
-                const name = data || "";
-                return name.toLowerCase().indexOf(searchedTerm) > -1;
-            });
-
-            addUsersOnTable(listUsers);
-        }
-
-
-        function addUsersOnTable(listUsers = []) {
-            const tableElement = document.querySelector(".country") || {};
-            const listElement = countryItem;
-
-
-            tableElement.innerHTML = "";
-
-            listUsers.forEach((user) => {
-                let x = `<li>${user}</li>`;
-                listElement.innerHTML += x;
-            });
-
-            let select = document.querySelector('.search-input').nextElementSibling;
-            let searchInput = document.querySelector('.search-input');
-
-            selectDropdown = select.querySelectorAll('li');
-            console.log(select);
-            console.log(selectDropdown);
+            selectDropdown = formElement.querySelectorAll('li');
 
             for (let dropdownItem of selectDropdown) {
                 dropdownItem.addEventListener('click', function(e) {
                     e.preventDefault()
                     let data = this.innerHTML;
-                    searchInput.value = data;
-                    searchInput.nextElementSibling.classList.remove('show')
+                    inputElement.value = data;
+                    placeItem.classList.remove('show')
                 });
             }
         }
-
     }
 }
+
+
+searchInput(country, 'country');
+searchInput(city, 'city');
+
 
 
 
@@ -203,9 +153,6 @@ if (selectBtns.length) {
         }
     }
 }
-
-
-
 
 
 
@@ -278,17 +225,72 @@ let addFavBtns = document.querySelectorAll('.fav-add-btn');
 if (addFavBtns.length) {
 
     for (let btn of addFavBtns) {
-        btn.addEventListener('click', () => {
-            btn.classList.toggle('active')
 
-            document.querySelector('.unregistered-widget').classList.toggle('active');
+        btn.addEventListener('click', () => {
+
+            if (type == null) {
+                var unregisteredWidget = btn.closest('.card-item__bottom').querySelector('.unregistered-widget');
+                unregisteredWidget.classList.add('active');
+
+
+                document.addEventListener('click', function(e) {
+                    var target = e.target;
+                    var itsDropdown = target == unregisteredWidget.closest('.card-item__bottom') || unregisteredWidget.closest('.card-item__bottom').contains(target);
+                    var itsBtn = target == btn;
+                    var dropdownActive = unregisteredWidget.classList.contains('active');
+
+
+                    if (!itsDropdown && !itsBtn && dropdownActive) {
+                        unregisteredWidget.classList.remove('active')
+                    }
+                });
+            } else {
+                btn.classList.toggle('active')
+            }
 
         })
     }
 
 }
 
+let openSocialWidget = document.querySelectorAll('.open-social-btn');
+if (openSocialWidget.length) {
 
+    for (let social of openSocialWidget) {
+        social.addEventListener('click', function(e) {
+            if (type == null) {
+                var unregisteredWidget = social.closest('.card-item__bottom').querySelector('.unregistered-widget');
+                unregisteredWidget.classList.add('active');
+
+
+                document.addEventListener('click', function(e) {
+                    var target = e.target;
+                    var itsDropdown = target == unregisteredWidget.closest('.card-item__bottom') || unregisteredWidget.closest('.card-item__bottom').contains(target);
+                    var itsBtn = target == social;
+                    var dropdownActive = unregisteredWidget.classList.contains('active');
+
+
+                    if (!itsDropdown && !itsBtn && dropdownActive) {
+                        unregisteredWidget.classList.remove('active')
+                    }
+                });
+            } else {
+                social.closest('.card-item__bottom').querySelector('.social-widget').classList.add('show')
+                document.addEventListener('click', function(e) {
+                    var target = e.target;
+                    var itsDropdown = target == social.closest('.card-item__bottom').querySelector('.social-widget') || social.closest('.card-item__bottom').querySelector('.social-widget').contains(target);
+                    var itsBtn = target == social;
+                    var dropdownActive = social.closest('.card-item__bottom').querySelector('.social-widget').classList.contains('show');
+
+
+                    if (!itsDropdown && !itsBtn && dropdownActive) {
+                        social.closest('.card-item__bottom').querySelector('.social-widget').classList.remove('show')
+                    }
+                });
+            }
+        })
+    }
+}
 
 let avatar = document.querySelector('.avatar'),
     editFile = document.querySelector('#avatar-file');
@@ -314,12 +316,25 @@ function removeAvatar() {
 }
 
 
+
 let openSocial = document.querySelector('.open-social');
 if (openSocial) {
 
     openSocial.addEventListener('click', function(e) {
-        document.querySelector('  .social-widget').classList.toggle('show');
+        document.querySelector('.social-widget').classList.toggle('show');
     })
+
+    document.addEventListener('click', function(e) {
+        var target = e.target;
+        var itsDropdown = target == document.querySelector('.social-widget') || document.querySelector('.social-widget').contains(target);
+        var itsBtn = target == openSocial;
+        var dropdownActive = document.querySelector('.social-widget').classList.contains('show');
+
+
+        if (!itsDropdown && !itsBtn && dropdownActive) {
+            document.querySelector('.social-widget').classList.remove('show')
+        }
+    });
 }
 
 
@@ -381,6 +396,7 @@ if (inputs.length) {
 var type = localStorage.getItem('type')
 document.querySelector('body').classList.add(type);
 
+/* Авторизоваться как  соискатель  */
 function applicantLogin(e) {
 
     let form = document.querySelector('.auth-form')
@@ -412,7 +428,7 @@ if (loginBtn) {
 
 
 
-
+/* Авторизоваться как  работодатель  */
 let loginEmployer = document.querySelector('.login-employer-btn');
 if (loginEmployer) {
 
@@ -437,8 +453,6 @@ if (loginEmployer) {
         }
     })
 }
-
-let filterCheck = document.querySelectorAll('.w-filter-item-value')
 
 
 let logoutBtns = document.querySelectorAll('.logout-btn');
