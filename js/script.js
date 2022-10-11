@@ -72,6 +72,7 @@ function searchInput(place, dropdown) {
             );
         }
 
+
         function searchElem(inputElement) {
             let searchedTerm = inputElement.value && inputElement.value.toLowerCase();
 
@@ -501,7 +502,7 @@ if (responseBtn) {
         document.querySelector('.popup.order-popup').classList.remove('show');
         openPopup.innerHTML = "Отклик доставлен";
         document.querySelector('.notif.response-notif').classList.add('show');
-
+        setTimeout(() => document.querySelector('.notif').classList.remove('show'), 2500)
     });
 
 }
