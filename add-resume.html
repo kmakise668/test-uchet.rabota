@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/Logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <title>Учет.Работа</title>
 </head>
@@ -45,6 +50,8 @@
                 </a>
             </div>
             <a href="login.html" class="btn bordered unauthorized-block hide-sm">Войти</a>
+
+            <!-- Авторизован как соискатель -->
             <div class="authorized-block">
                 <div class="right-btns hide-sm">
                     <a href="search-vacancy.html" class="text">Поиск вакансий</a>
@@ -64,6 +71,7 @@
                 </div>
             </div>
 
+            <!-- Авторизован как работодатель -->
             <div class="authorized-employer-block">
                 <div class="right-btns hide-sm">
                     <a href="vacancy-response.html" class="text rel">Отклики на вакансии <span
@@ -133,7 +141,7 @@
                                                 <li>Декабрь</li>
                                             </ul>
                                         </div>
-                                        <div class="select-wrapper"> <input type="text" readonly="" class="select-input" placeholder="Год">
+                                        <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Год">
                                             <ul class="select-dropdown years-select">
 
                                             </ul>
@@ -145,19 +153,20 @@
                                         <label for="woman">Женский</label> </div>
                                 </div>
                                 <div class="form-group"> <label>Город проживания*</label>
-                                    <div class="select-wrapper"> <input type="text" readonly="" class="select-input" placeholder="Выберите город">
+                                    <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Введите город">
                                         <ul class="select-dropdown city">
+                                            <li class="grey-text disabled">Введите название города</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="form-group"> <label>Гражданство*</label>
-                                    <div class="select-wrapper"> <input type="text" id="name" class="select-input validate search-input" placeholder="Выберите страну">
-
+                                    <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Введите страну">
                                         <ul class="select-dropdown country">
-                                            <li class="grey-text disabled">Ничего не найдено</li>
+                                            <li class="grey-text disabled">Введите название страны</li>
                                         </ul>
                                     </div>
                                 </div>
+
                                 <div class="form-group"> <label for="">Мобильный телефон*</label> <input type="text" placeholder="" class="phone-mask"> </div>
                             </form>
                         </div>
@@ -272,8 +281,9 @@
                                 </div>
                                 <div class="form-group"> <label for="">Компания*</label> <input type="text" placeholder="Компания" value="ТОО FOA"> </div>
                                 <div class="form-group"> <label>Город*</label>
-                                    <div class="select-wrapper"> <input type="text" readonly="" class="select-input" placeholder="Выберите город" value="Алматы">
+                                    <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Введите город">
                                         <ul class="select-dropdown city">
+                                            <li class="grey-text disabled">Введите название города</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -309,7 +319,7 @@
                                                 <li>Декабрь</li>
                                             </ul>
                                         </div>
-                                        <div class="select-wrapper"> <input type="text" readonly="" class="select-input" placeholder="Год" value="2019">
+                                        <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Год" value="2019">
                                             <ul class="select-dropdown years-select">
 
                                             </ul>
@@ -373,7 +383,7 @@
                                     <div class="form-group"> <label for="">Специализация</label> <input type="text" placeholder="Специализация" value=""> </div>
                                     <div class="form-group"> <label>Год окончания </label>
                                         <div class="date fs-block">
-                                            <div class="select-wrapper"> <input type="text" readonly="" class="select-input" placeholder="Год" value="2019">
+                                            <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Год" value="2019">
                                                 <ul class="select-dropdown years-select">
                                                 </ul> <label class="input-checkbox"> <input type="checkbox" id=""
                                                         name="checkbox" data-type="checkbox"> <span>Учусь сейчас</span>
@@ -406,7 +416,7 @@
                                     <div class="form-group"> <label for="">Специализация</label> <input type="text" placeholder="Специализация" value=""> </div>
                                     <div class="form-group"> <label>Год окончания</label>
                                         <div class="date fs-block">
-                                            <div class="select-wrapper"> <input type="text" readonly="" class="select-input" placeholder="Год" value="2019">
+                                            <div class="select-wrapper"> <input type="text" class="select-input" placeholder="Год" value="2019">
                                                 <ul class="select-dropdown years-select">
 
                                                 </ul> <label class="input-checkbox"> <input type="checkbox" id=""
@@ -505,8 +515,7 @@
                                 <a href="single-resume.html" class="btn half mla next-btn">Продолжить</button> </a>
                             </form>
                         </div>
-                        <div class="btns  mla pt"> <a onclick="" class="icon-left grey-text prev-btn dn">Назад</a>
-                            <button class="btn half mla next-btn">Продолжить</button> </div>
+
                     </div>
                 </div>
             </div>
@@ -528,7 +537,7 @@
                                 name="resume" id="resume_2"><span>Главный бухгалтер</span></label> </div>
                 </div>
                 <div class="btns jcc">
-                    <div class="line jcc"> <button class="btn response-btn">Откликнуться</button> <button class="btn theme-bordered">Отмена</button> </div>
+                    <div class="line jcc"> <button class="btn response-btn">Откликнуться</button> <button class="btn theme-bordered close-popup">Отмена</button> </div>
                 </div>
             </div>
         </form>
@@ -543,7 +552,7 @@
                     <div>Вы действительно хотите удалить резюме?</div>
                 </div>
                 <div class="btns jcc">
-                    <div class="line jcc"> <button class="btn response-btn">Удалить</button> <button class="btn theme-bordered">Отменить</button> </div>
+                    <div class="line jcc"> <button class="btn close-popup">Удалить</button> <button class="btn theme-bordered close-popup">Отменить</button> </div>
                 </div>
             </div>
         </form>

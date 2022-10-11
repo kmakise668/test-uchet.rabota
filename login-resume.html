@@ -45,6 +45,8 @@
                 </a>
             </div>
             <a href="login.html" class="btn bordered unauthorized-block hide-sm">Войти</a>
+
+            <!-- Авторизован как соискатель -->
             <div class="authorized-block">
                 <div class="right-btns hide-sm">
                     <a href="search-vacancy.html" class="text">Поиск вакансий</a>
@@ -64,6 +66,7 @@
                 </div>
             </div>
 
+            <!-- Авторизован как работодатель -->
             <div class="authorized-employer-block">
                 <div class="right-btns hide-sm">
                     <a href="vacancy-response.html" class="text rel">Отклики на вакансии <span
@@ -98,26 +101,26 @@
                                     <div class="avatar" data-src=""></div> <span class="delete-image dn" onclick="removeAvatar();"></span>
                                 </div>
                                 <div class="article-sm">
-                                    <h5>User Name</h5>
+                                    <h5>Фамилия Имя</h5>
                                     <p>01 апрель 1992 г.</p>
                                 </div>
                             </div>
                             <ul class="column">
                                 <li><span>Город:</span>Алматы</li>
                                 <li><span>Гражданство:</span>Казахстан</li>
-                                <li><span>Телефон:</span>+7 (706) 430 88 66</li>
-                                <li><span>Email:</span>aaizovskaya@gmail.com</li>
+                                <li><span>Телефон:</span><a href="tel:+77064308866" class="text">+7 (706) 430 88 66</a></li>
+                                <li><span>Email:</span><a href="mailto:@exaple@email.ru" class="text">exaple@email.ru</a></li>
                             </ul> <a href="edit-user-info.html" class="icon-edit blue-theme">Редактировать</a>
                         </div>
                     </div>
                     <div class="resume-description article bordered">
                         <div class="vacancy-wrapper article">
                             <div class="vacancy-info">
-                                <h6>Бухгалтер</h6>
-                                <div class="salary">250 000 KZT на руки</div>
+                                <h6>Бухгалтер на первичную документацию</h6>
+                                <div class="salary">300 000 KZT на руки</div>
                             </div>
                             <ul class="column">
-                                <li><span>Отрасль:</span>Консалтинг, Аудит</li>
+                                <li><span>Отрасль:</span>Работа с большим объемом информации</li>
                                 <li><span>Тип занятости:</span>Полная занятость, Частичная занятость</li>
                                 <li><span>График работы:</span>Полный день, Удаленная работа</li>
                                 <li><span>Переезд:</span>Не готов к переезду</li>
@@ -245,7 +248,7 @@
                                 name="resume" id="resume_2"><span>Главный бухгалтер</span></label> </div>
                 </div>
                 <div class="btns jcc">
-                    <div class="line jcc"> <button class="btn response-btn">Откликнуться</button> <button class="btn theme-bordered">Отмена</button> </div>
+                    <div class="line jcc"> <button class="btn response-btn">Откликнуться</button> <button class="btn theme-bordered close-popup">Отмена</button> </div>
                 </div>
             </div>
         </form>
@@ -260,7 +263,7 @@
                     <div>Вы действительно хотите удалить резюме?</div>
                 </div>
                 <div class="btns jcc">
-                    <div class="line jcc"> <button class="btn response-btn">Удалить</button> <button class="btn theme-bordered">Отменить</button> </div>
+                    <div class="line jcc"> <button class="btn close-popup">Удалить</button> <button class="btn theme-bordered close-popup">Отменить</button> </div>
                 </div>
             </div>
         </form>
