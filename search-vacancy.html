@@ -107,7 +107,8 @@
             <div class="tabs-wrapper">
                 <!-- Tab links -->
                 <div class="tab-links">
-                    <div class="tab-link active" data-tablink="tab1">Все</div>
+                    <div class="tab-link active" data-tablink="tab0">Все</div>
+                    <div class="tab-link" data-tablink="tab1">Бухгалтер</div>
                     <div class="tab-link" data-tablink="tab2">Бухгалтер на первичную документацию</div>
                     <div class="tab-link" data-tablink="tab3">Помощник бухгалтера</div>
                     <div class="tab-link" data-tablink="tab4">Бухгалтер материального стола</div>
@@ -119,7 +120,7 @@
                 </div>
                 <!-- Tab content -->
                 <div class="tabs-content">
-                    <div id="tab1" class="tab-content active">
+                    <div id="tab0" class="tab-content active">
 
                         <div class="card-items">
                             <div class="card-item">
@@ -366,7 +367,14 @@
                             </div>
                         </div>
                     </div>
-
+                    <div id="tab1" class="tab-content">
+                        <div class="no-vacancy-card">
+                            <picture>
+                                <source srcset="./img/no-card.svg" type="image/webp"><img src="./img/no-card.svg" alt="">
+                            </picture>
+                            <div class="grey-text fw-700 mt2">Актуальных вакансии не найдено</div>
+                        </div>
+                    </div>
                     <div id="tab2" class="tab-content">
 
                         <div class="card-items">
