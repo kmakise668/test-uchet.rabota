@@ -179,6 +179,28 @@ searchInput(city, 'city');
 
 
 
+var languageString = "КазахскийРусскийАнглийскийАбазинскийАбхазскийАварскийАзербайджанскийАлбанскийАрабскийАрмянскийБаскскийБашкирскийБелорусскийБенгальскийБирманскийБолгарскийБоснийскийБурятскийВенгерскийВьетнамскийГолландскийГреческийГрузинскийДагестанскийДатскийИвритИнгушскийИндонезийскийИрландскийИсландскийИтальянскийКитайскийКорейскийКыргызскийЛатинскийЛитовскийМакедонскийМалазийскийМонгольскийНепальскийНорвежскийОсетинскийПерсидскийПольскийПортугальскийРумынскийСербскийСловенскийТайскийТатарскийТурецкийУзбекскийУйгурскийУкраинскийФинскийХиндиХорватскийЧеченскийЧешскийШведскийЭстонскийЯкутскийЯпонский"
+function selectLanguageItems(str) {
+    return [...str]
+        .map(i => {
+            if (x == 0 && i.toUpperCase() == i) { x++; return i } else if (i.toUpperCase() == i) { return " " + i } else { return i }
+        }, x = 0)
+        .join("")
+}
+
+let languageItems = document.querySelectorAll('.language');
+if (languageItems) {
+    for (let languageItem of languageItems) {
+        var language = selectLanguageItems(languageString).trim().replace(/\s+/g, ' ').split(' ');
+        for (var i = 0; i < language.length; i++) {
+            var x = "<li>" + language[i] + "</li>";
+            languageItem.innerHTML += x;
+        }
+    }
+
+}
+
+
 
 let selectBtns = document.querySelectorAll('.select-input');
 
