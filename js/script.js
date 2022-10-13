@@ -127,7 +127,7 @@ function searchInput(place, dropdown) {
         function bindEvents() {
 
             inputElement.addEventListener(
-                "keyup",
+                "keydown",
                 searchElem.bind(event, inputElement),
                 placeItem.classList.remove('show')
             );
